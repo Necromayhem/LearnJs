@@ -29,6 +29,8 @@ function getClothItem(index, cloth) {
   let editClothBtn = document.createElement("button")
   editClothBtn.textContent = "Изменить"
 
+
+
   editClothBtn.onclick = function () {
     cloth.title = prompt("Введите название вещи")
     cloth.size = Number(prompt("Введите размер"))
@@ -36,10 +38,43 @@ function getClothItem(index, cloth) {
     render(clothArray) // Запускаем перерисовку списка
   }
 
-  clothItem.append(editClothBtn)
+
+  //Кнопка добавления вещи
+
+  let addClothBtn = document.createElement("button")
+  addClothBtn.textContent = "Добавить"
+
+  addClothBtn.onclick = function() {
+  let newTitle = prompt("Введите название вещи")
+  let newSize = Number(prompt("Введите размер"))
+
+  let newCloth = {
+    title: newTitle,
+    size: newSize
+  }
+  clothArray.push(newCloth) 
+  render(clothArray) 
+  }
+
+// Кнопка удаления вещи
+let deleteClothBtn = document.createElement("button")
+deleteClothBtn.textContent = "Удалить"
+
+deleteClothBtn.onclick = function () {
+  clothArray.splice(index, 1) /
+  render(clothArray) 
+}
+
+  clothItem.append(editClothBtn, addClothBtn, deleteClothBtn)
 
   return clothItem
 }
+
+
+
+
+
+
 
 // Заголовок
 let title = document.createElement("h1")

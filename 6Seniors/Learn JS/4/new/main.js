@@ -79,22 +79,85 @@
 
 
 
-function Accumulator(startingValue){
-    this.value = startingValue;
+// function Accumulator(startingValue){
+//     this.value = startingValue;
 
-    this.read = function() {
-        let inputValue = +prompt("Введите значение", "")
-        this.value += inputValue
+//     this.read = function() {
+//         let inputValue = +prompt("Введите значение", "")
+//         this.value += inputValue
 
-        // this.value += +prompt('Сколько нужно добавить?', 0);    
-    }
+//         // this.value += +prompt('Сколько нужно добавить?', 0);    
+//     }
 
     
+// }
+
+
+// let accumulator = new Accumulator(1);
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+
+// alert(accumulator.value); 
+
+
+// let obj = {
+//     _: 12324,
+//     $: 434434,
+//     __: 323,
+//     $$$$$$: 322323,
+    
+// }
+
+// console.log(obj);
+
+
+
+// let menu = {
+//     city: "London",
+//     street: "Пушкина",
+//     adress: "Колотушкина",
+//     width: 500,
+//     height: 350,
+//     size: 425,
+//     z: 480,
+//     x: 511,
+//     c: 625,
+//     q: 780,
+//     w: 290,
+//     e: 180,
+//     human: 'qwerty',
+//     abc: {
+//         a: 200,
+//         b: 250,
+//         c: 400,
+//     }
+
+// }
+
+// function mulNumber(obj) {
+//     for(let key in obj) {
+//         if(typeof obj[key] === 'object') {
+//             mulNumber(obj[key]); // Рекурсивный вызов для вложенных объектов
+//         } else if(typeof obj[key] === 'number' && obj[key] < 500) {
+//             obj[key] *= 2;
+//         }
+//     }
+//     return obj;
+// }
+
+// console.log(mulNumber(menu));
+
+
+
+let car = {
+    brand: 'BMW',
+    model: "X6",
+    year: 2020,
+    displayInfo: function(){
+        return this.brand + ' ' + this.model + ', ' + this.year;
+    }
 }
 
+console.log(car.displayInfo());
 
-let accumulator = new Accumulator(1);
-accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
-accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
 
-alert(accumulator.value); 

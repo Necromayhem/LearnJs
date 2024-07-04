@@ -149,15 +149,15 @@
 
 
 
-let car = {
-    brand: 'BMW',
-    model: "X6",
-    year: 2020,
-    displayInfo: function(){
-        return this.brand + ' ' + this.model + ', ' + this.year;
-    }
-}
+// let car = {
+//     brand: 'BMW',
+//     model: "X6",
+//     year: 2020,
+//     displayInfo: function(){
+//         return this.brand + ' ' + this.model + ', ' + this.year;
+//     }
+// }
 
-console.log(car.displayInfo());
+// console.log(car.displayInfo());
 
 

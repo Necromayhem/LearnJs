@@ -24,17 +24,37 @@
 
 
 
-let id = Symbol("id");
+// let id = Symbol("id");
+// let user = {
+//   [id]: 123
+// };
+
+// let clone = Object.assign({}, user);
+
+
+// console.log( clone ); 
+
+
+// let user = {
+//   name: "Вася"
+// }
+
+// let id = Symbol("id");
+
+// user[id] = 1;
+
+// console.log(user[id]);
+// console.log(user);
+
+
+let id = Symbol('qqq')
+
 let user = {
-  [id]: 123
-};
+  name: "Вася",
+  [id]: 123 
+}
 
-let clone = Object.assign({}, user);
-
-
-console.log( clone ); 
-
-
+console.log(user);
 
 
 

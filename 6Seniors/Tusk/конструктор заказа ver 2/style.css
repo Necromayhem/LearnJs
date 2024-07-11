@@ -43,4 +43,9 @@ input {
     border-radius: 5px;
 }
 
+.image {
+    float: right;
+    width: 50%;  
+}
+
 

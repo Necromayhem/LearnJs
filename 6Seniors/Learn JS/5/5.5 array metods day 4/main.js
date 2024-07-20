@@ -126,27 +126,27 @@
 
 
 
-function Calculator(){
-    this.calculate = function(str){
-        let [a, op, b] = str.split(" ");
-        let num1 = parseFloat(a);
-        let num2 = parseFloat(b);
+// function Calculator(){
+//     this.calculate = function(str){
+//         let [a, op, b] = str.split(" ");
+//         let num1 = parseFloat(a);
+//         let num2 = parseFloat(b);
 
 
-        switch(op){
-            case "+":
-                return num1 + num2;
-            case "-":
-                return num1 - num2;
-            default:
-                throw new Error("Неподдерживаемый оператор")
-        }
-    }
+//         switch(op){
+//             case "+":
+//                 return num1 + num2;
+//             case "-":
+//                 return num1 - num2;
+//             default:
+//                 throw new Error("Неподдерживаемый оператор")
+//         }
+//     }
 
     
-}
+// }
 
 
-let calc = new Calculator();
-console.log(calc.calculate("1 + 2"));
-console.log(calc.calculate("5 - 7"));
+// let calc = new Calculator();
+// console.log(calc.calculate("1 + 2"));
+// console.log(calc.calculate("5 - 7"));

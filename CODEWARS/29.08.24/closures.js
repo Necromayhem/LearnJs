@@ -33,13 +33,13 @@ const greetBen = (() => {
 // newCounter() // 1
 // newCounter() // 2
 
-// function counter(){
-//     let count = 0;
-//     return function(){
-//         count += 1
-//         return count
-//     }
-// }
+function counter(){
+    let count = 0;
+    return function(){
+        count += 1
+        return count
+    }
+}
 
 // const newCounter = counter()
 // console.log(newCounter());
@@ -80,21 +80,21 @@ function createFunctions(n) {
 // counter.decrement();
 // console.log(counter.getCount()); // 0
 
-// function createCounter() {
-//     let count = 0;
+function createCounter() {
+    let count = 0;
   
-//     return {
-//       increment: function() {
-//         return count++;
-//       },
-//       decrement: function() {
-//         return count--;
-//       },
-//       getCount: function() {
-//         return count;
-//       }
-//     };
-//   }
+    return {
+      increment: function() {
+        return count++;
+      },
+      decrement: function() {
+        return count--;
+      },
+      getCount: function() {
+        return count;
+      }
+    };
+  }
 
 // const counter = createCounter();
 // console.log(counter.getCount()); // 0
@@ -133,17 +133,17 @@ function createIncrement(){
 }
 
 
-// let f1 = createIncrement();
-// let g1 = f1(); // logs: Incrementing!
-// console.log(g1);
-// let g2 = f1(); // logs: Incrementing!
-// console.log(g2);
-// let g3 = f1(); // logs: Incrementing!
-// console.log(g3);
+let f1 = createIncrement();
+let g1 = f1(); // logs: Incrementing!
+console.log(g1);
+let g2 = f1(); // logs: Incrementing!
+console.log(g2);
+let g3 = f1(); // logs: Incrementing!
+console.log(g3);
 
-// let f2 = createIncrement();
-// let g4 = f2()
-// console.log(g4);
+let f2 = createIncrement();
+let g4 = f2()
+console.log(g4);
 
 
 

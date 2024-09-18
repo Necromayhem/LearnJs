@@ -15,9 +15,9 @@ function printHello(){
 // 2) Повторяющиеся числа:
 // Используя setInterval, напишите скрипт, который выводит в консоль числа от 1 до 5, с интервалом в 1 секунду между выводами. После достижения 5, остановите интервал.
 
-// let timerId = setInterval(() => console.log(n++), 1000);
+let timerId = setInterval(() => console.log(n++), 1000);
 
-// setTimeout(() => clearInterval(timerId), 5000, n = 1)
+setTimeout(() => clearInterval(timerId), 5000, n = 1)
 
 
 
@@ -35,7 +35,7 @@ function tick(n) {
     }
 }
 
-// setTimeout(tick, 1000, 10);
+setTimeout(tick, 1000, 10);
 
 
 // 2) Асинхронная цепочка:

@@ -1,0 +1,16 @@
+h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: center;
+}
+
+h2 {
+font-size: 32px;
+text-transform: uppercase;
+}
+
+p {
+    font-family: Verdana, Geneva, sans-serif;
+}
+

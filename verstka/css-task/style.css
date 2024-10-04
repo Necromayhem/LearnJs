@@ -1,0 +1,47 @@
+body {
+    background-color: rgba(0,0,0,0.1);
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  
+  header {
+    background-color: #fff8dc;
+  }
+  
+  .title {
+    color: #0000cd;
+    text-align: center;
+  }
+  
+  .contacts .title {
+    font-size: 28px;
+    text-align: left;
+    font-weight: normal;
+  }
+  
+  .contacts strong {
+    text-decoration: underline;
+  }
+  
+  .contacts a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .contacts a:hover {
+    text-decoration: underline;
+  }
+  
+  .contacts__address strong {
+    color: #00bfff;
+  }
+  
+  .contacts__phone strong {
+    color: #8fbc8b;
+  }
+  
+  .contacts__email strong {
+    color: #9932cc;
+  }

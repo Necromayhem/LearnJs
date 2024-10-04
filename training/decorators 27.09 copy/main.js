@@ -28,26 +28,26 @@ const timedFunction = measureTime(exampleFunction);
 // Описание:
 // Создайте декоратор logArguments, который будет логировать все аргументы, с которыми вызывается функция.
 
-// function logArguments(func) {
-//   let cache = new Map();
-//   // return function(...arguments){
-//     if(cache.has(arguments)){
-//       return cache.get(arguments)
-//     }
+function logArguments(func) {
+  let cache = new Map();
+  return function(...arguments){
+    if(cache.has(arguments)){
+      return cache.get(arguments)
+    }
 
-//     let result = func.call(arguments);
-//     cache.set(arguments, result);
-//     console.log("Аргументы: " + (Array.from(arguments)).join(", "));
-//     return result;
-//   }
-// // }
-
-// function sum(a, b) {
-//   return a + b;
+    let result = func.call(arguments);
+    cache.set(arguments, result);
+    console.log("Аргументы: " + (Array.from(arguments)).join(", "));
+    return result;
+  }
 // }
 
-// const loggedSum = logArguments(sum);
-// loggedSum(2, 3); // Должно вывести в консоль "Аргументы: 2, 3"
+function sum(a, b) {
+  return a + b;
+}
+
+const loggedSum = logArguments(sum);
+loggedSum(2, 3); // Должно вывести в консоль "Аргументы: 2, 3"
 
 
 // Задача 3: Переадресация вызова с изменением контекста

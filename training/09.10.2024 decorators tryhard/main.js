@@ -353,11 +353,14 @@ function curInc(obj){
 };
 
 const currentValue = curInc(counter);
-currentValue(5)(); // 5
-currentValue(11)(); // 11
-incrementer(counter)(); // 12
-decrementer(counter)(); // 11
-decrementer(counter)(); // 10
+// currentValue(5)(); // 5
+// currentValue(11)(); // 11
+// incrementer(counter)(); // 12
+// decrementer(counter)(); // 11
+// decrementer(counter)(); // 10
+
+
+
 
 
 

@@ -69,6 +69,46 @@ function deeper(obj, string){
 // bot.addResponse('Рад тебя видеть!');
 // bot.sendMessage('Как дела?');  //  Бот ответит одной из 
 
+let chatBot = {
+  answers: ['Рад тебя видеть!', 'Что делаешь?', 'Как тебя зовут?', 'Как прошёл день?'],
+
+  sendMessage: function(){
+    return setTimeout(() => {
+      const randomIndex = Math.floor(Math.random() * this.answers.length);
+      const randomAnswer = this.answers[randomIndex];
+      console.log(randomAnswer);
+    }, 2000)
+  },
+
+  addResponse: function(string){
+    let newPhrase = string;
+    if(typeof newPhrase === 'string'){
+      this.answers.push(newPhrase);
+    }
+  }
+};
+
+chatBot.addResponse("Тест")
+chatBot.addResponse("прив чё дел")
+chatBot.addResponse("абоба")
+chatBot.addResponse("расскажи о себе")
+chatBot.addResponse("чего хочешь???")
+
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+chatBot.sendMessage()
+
+
+
 
 
 //  =============== 4 ЗАДАНИЕ  ===============
@@ -214,7 +254,7 @@ function maxChain(arr){
   } return max;
 }
 
-console.log(maxChain(array)); 
+// console.log(maxChain(array)); 
 
 
 

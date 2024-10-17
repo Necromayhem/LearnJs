@@ -93,6 +93,7 @@ chatBot.addResponse("прив чё дел")
 chatBot.addResponse("абоба")
 chatBot.addResponse("расскажи о себе")
 chatBot.addResponse("чего хочешь???")
+console.log(chatBot.answers);
 
 chatBot.sendMessage()
 chatBot.sendMessage()

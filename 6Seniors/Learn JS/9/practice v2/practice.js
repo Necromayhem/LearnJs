@@ -348,13 +348,87 @@ const date = new CustomDate();
 // #### Сложная задача
 // Создайте класс `CustomMap`, который расширяет класс `Map`. Добавьте метод `getKeys()`, возвращающий массив ключей карты.
 
+class CustomMap extends Map {
+    constructor(obj) {
+        super(); // Вызываем конструктор родительского класса Map
+        for (const [key, value] of Object.entries(obj)) {
+            this.set(key, value); // Задаем ключи и значения в объект Map
+        }
+    }
+
+    getKeys() {
+        return Array.from(this.keys()); // Возвращаем массив ключей
+    }
+}
+
+const map = new CustomMap({
+    1: "qwerty",
+    2: "zxc",
+    3: "asd"
+});
+// console.log(map.getKeys()); // ['1', '2', '3']
+
 // 6. Проверка класса: "instanceof"
 
 // #### Простая задача
 // Создайте класс `Animal` и класс `Dog`, унаследованный от `Animal`. Проверяйте, является ли объект экземпляром `Dog` с помощью `instanceof`.
 
+{
+    class Animal{};
+    class Dog extends Animal{};
+
+    const dog = new Dog();
+    // console.log(dog instanceof Animal); // true
+}
 // #### Средняя задача
 // Создайте класс `Shape` и унаследованные классы `Circle` и `Square`. Реализуйте метод `isShape()` в базовом классе, который проверяет, является ли текущий объект экземпляром `Shape`.
 
+{
+    class Shape{};
+
+    class Circle extends Shape{};
+    class Square extends Shape{};
+
+    Shape.isShape = function(obj){
+        if(obj instanceof Shape){
+            return `Это инстанс Shape`
+        } else{
+            return `не инстанс`
+        }
+    }
+
+    const shape = new Shape();
+    const circle = new Circle();
+    const square = new Square();
+
+    // console.log(Shape.isShape(shape)); // Это инстанс Shape
+    // console.log(Shape.isShape(circle)); // Это инстанс Shape
+    // console.log(Shape.isShape(square)); // Это инстанс Shape
+    // console.log(Shape.isShape({})); // не инстанс
+}
+
+
+
 // #### Сложная задача
 // Создайте базовый класс `Vehicle` и унаследованные классы `Car` и `Bike`. Реализуйте функцию `checkType(vehicle)`, которая принимает объект и выводит, является ли он автомобилем, велосипедом или другим транспортным средством.
+
+{
+    class Vehicle{};
+
+    class Car extends Vehicle{};
+    class Bike extends Vehicle{};
+
+    const bmw = new Car();
+    const yamaha = new Bike();
+    const kamaz = new Vehicle();
+
+    function checkType(vehicle){
+        if(vehicle instanceof Car) return `Это авто`;
+        if(vehicle instanceof Bike) return `Это велосипед`;
+        return `Это что-то другое`;
+    };
+
+    console.log(checkType(bmw)); // Это авто
+    console.log(checkType(yamaha)); // Это велосипед
+    console.log(checkType(kamaz)); // Это что-то другое
+}

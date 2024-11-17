@@ -37,8 +37,8 @@ class Kettle{
 };
 
 const kettle = new Kettle();
-kettle.waterAmount = 1000;
-console.log(kettle.inclusion());
+// kettle.waterAmount = 1000;
+// console.log(kettle.inclusion());
 
 
     

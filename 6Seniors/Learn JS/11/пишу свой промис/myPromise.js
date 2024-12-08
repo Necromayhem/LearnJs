@@ -4,71 +4,100 @@ const FULFILLED = 'fulfilled';
 const PENDING = 'pending';
 const REJECTED = 'rejected';
 
-class myPromise {
-    constructor(executor){
-         this.state = PENDING;
-         this.result = undefined;
-         this.onFulfiledFn = [];
-         this.onRejectedFn = [];
-        
-        const resolve = (value) =>{
+class MyPromise {
+      constructor(executor){
+        this.state = PENDING;
+        this.result = undefined;
+        this.onFulfilledFn = [];
+        this.onRejectedFn = [];
+
+       const resolve = (value) => {
             if(this.state === PENDING){
                 this.state = FULFILLED;
                 this.result = value;
-                this.onFulfiledFn.forEach((fn) =>
-                    fn(value));
-            }
-        };
+                this.onFulfilledFn.forEach((fn) => fn(value));
 
-        const reject = (error) => {
+            }
+        }
+    
+       const reject = (error) => {
             if(this.state === PENDING){
                 this.state = REJECTED;
-                this.result = error; 
-                this.onRejectedFn.forEach((fn) =>
-                    fn(error));
+                this.result = error;
+                this.onRejectedFn.forEach((fn) => fn(error));
             }
-        };
+        }
 
-        try {
+        try{
             executor(resolve, reject)
         } catch(error){
-            reject(error); 
+            reject(error)
         }
-        
     }
 
-    then = (onFulfiled, onRejected) => {
+    then = (onFulfilled, onRejected) => {
         if(this.state === PENDING){
-            if(onFulfiled){
-                this.onFulfiledFn.push(onFulfiled)
+            if(onFulfilled){
+                this.onFulfilledFn.push(onFulfilled)
             }
+
             if(onRejected){
                 this.onRejectedFn.push(onRejected)
             }
+            
         }
 
-        if(onFulfiled && this.state === FULFILLED){
-            onFulfiled(this.result)
+        if(onFulfilled && this.state === FULFILLED){
+            onFulfilled(this.result)
             return;
         }
 
         if(onRejected && this.state === REJECTED){
-            onRejected(this.error)
+            onRejected(this.result)
             return;
         }
     }
 
-    catch = (onRejected) => {
-        this.then(null, onRejected)
-    }
 }
 
-// const promise = new myPromise((resolve, reject) => {
-//     reject('error')
+// 1.+ Конструктор на вход которого переходит executor в свойствах которого две функции для успеха и ошибки, которые можно выполнить и изменить состояние
+
+// const promise = new MyPromise((resolve, reject) => {
+    
+//     resolve('success')
 // })
 
 // console.log(promise);
 
+// 2.+ Используется для отложенного кода
+// const promise = new MyPromise((resolve, reject) => {
+//     setTimeout(() => resolve('success'), 2000)
+// })
+
+// setTimeout(() => {
+//     console.log(promise);
+// }, 2000)
+
+
+// 3.+ Resolve, reject можно вызвать только один раз
+// const promise = new MyPromise((resolve, reject) => {
+//     setTimeout(() => reject('error'), 1000);
+//     setTimeout(() => resolve('success1'), 2000);
+//     resolve('success2')
+// })
+
+// console.log(promise); // success2
+
+// 4.+ Чтобы перехватить значение используется метод then 
+// const promise = new MyPromise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('success')
+//     }, 1000)
+// }).then((value) => {
+//     console.log(value);
+// })
+
+// 29:45
 
 
 

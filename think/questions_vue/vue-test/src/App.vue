@@ -1,5 +1,14 @@
-<script setup></script>
+<script setup>
+import ScopedTest from './components/scopedTest.vue'
+</script>
 
-<template></template>
+<template>
+  <h1>123</h1>
+  <ScopedTest />
+</template>
 
-<style></style>
+<style>
+h1 {
+  color: green;
+}
+</style>
